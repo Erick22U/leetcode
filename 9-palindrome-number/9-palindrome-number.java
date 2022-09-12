@@ -1,20 +1,15 @@
-class Solution {
-    public boolean isPalindrome(int x) {
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        l = 0
+        r = len(str(x)) - 1
         
-        String str = Integer.toString(x);
-        
-        int start = 0;
-        int end = str.length() - 1;
-        
-        while(end > start){
-            
-            if(str.charAt(end) != str.charAt(start))
-                return false;
-            
-            end--;
-            start++;
-        }
-        
-        return true;
-    }
-}
+        while l <= r:
+            if str(x)[l] != str(x)[r]:
+                return False
+            l += 1
+            r -= 1
+        return True
